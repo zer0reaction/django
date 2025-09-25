@@ -25,5 +25,6 @@ urlpatterns = [
     path('navigator', views.navigator),
     re_path(r'^[Tt]ours?$', views.tours),
     re_path(r'^[Aa]gencies$', views.agencies),
+    re_path(r'^[Pp]reparation$', views.preparation),
     path('admin/', admin.site.urls),
 ]

@@ -57,3 +57,6 @@ def agencies(request):
     ]
 
     return render(request, "agencies.html", context={"agencies": agencies})
+
+def preparation(request):
+    return render(request, "preparation.html")
