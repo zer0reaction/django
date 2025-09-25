@@ -36,3 +36,24 @@ def tours(request):
     ]
 
     return render(request, "tours.html", context={"tours": tours})
+
+def agencies(request):
+    agencies = [
+        {
+            "name": "1002 Тур",
+            "address": "Тверская, 16",
+            "phone": "+7 (495) 735-11-01",
+        },
+        {
+            "name": "Чип Тревелс",
+            "address": "Ветошный переулок, 10",
+            "phone": "+7 (495) 569-23-66",
+        },
+        {
+            "name": "Апельсин Тревелс",
+            "address": "ул. Широкая, 14",
+            "phone": "+7 (495) 365-32-40",
+        },
+    ]
+
+    return render(request, "agencies.html", context={"agencies": agencies})
