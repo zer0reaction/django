@@ -20,11 +20,56 @@ from django.urls import re_path
 
 from firstapp_var_26 import views
 
+tours = [
+    {
+        "name": "Золотое кольцо России",
+        "type": "Экскурсионный",
+        "season": "Лето",
+        "duration": "5 дней, 4 ночи",
+    },
+    {
+        "name": "Осень в Карелии",
+        "type": "Экскурсионный",
+        "season": "Осень",
+        "duration": "3 дня, 2 ночи",
+    },
+    {
+        "name": "Знакомство с Байкалом. Осень",
+        "type": "Экскурсионный",
+        "season": "Осень",
+        "duration": "5 дней, 4 ночи",
+    },
+    {
+        "name": "Восхождение на Эльбрус",
+        "type": "Восхождение",
+        "season": "Осень",
+        "duration": "8 дней, 7 ночей",
+    },
+]
+
+agencies = [
+    {
+        "name": "1002 Тур",
+        "address": "Тверская, 16",
+        "phone": "+7 (495) 735-11-01",
+    },
+    {
+        "name": "Чип Тревелс",
+        "address": "Ветошный переулок, 10",
+        "phone": "+7 (495) 569-23-66",
+    },
+    {
+        "name": "Апельсин Тревелс",
+        "address": "ул. Широкая, 14",
+        "phone": "+7 (495) 365-32-40",
+    },
+]
+
 urlpatterns = [
     path('', views.index),
     path('navigator', views.navigator),
-    re_path(r'^[Tt]ours?$', views.tours),
-    re_path(r'^[Aa]gencies$', views.agencies),
+    re_path(r'^[Tt]ours?$', views.tours, kwargs={"tours": tours}),
+    re_path(r'^[Aa]gencies$', views.agencies, kwargs={"agencies": agencies}),
     re_path(r'^[Pp]reparation$', views.preparation),
     path('admin/', admin.site.urls),
 ]
